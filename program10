@@ -1,0 +1,58 @@
+10. Develop a JAVA program to create a package named pack1 and import & implement it in a suitable 
+class. 
+/*Create a package to convert temperature in centigrade into Fahrenheit, and one more package to 
+calculate the simple Interest. Implement both package in the Main () by accepting the required inputs 
+for each application.*/ 
+ 
+package pack1; 
+import java.io.*; 
+public class centFarh{ 
+double centi,farh; 
+public centFarh() 
+          { 
+          
+        Console console = System.console();    
+ System.out.print("Enter Temperature => "); 
+ centi=Double.parseDouble(console.readLine()); 
+          } 
+public void calcCF() 
+             { 
+          farh=(centi * 9/5) +32; 
+          System.out.println("Farhnheit is => "+farh); 
+             }   
+   }  
+ 
+//Save the above file in centFarh.java 
+ 
+package pack1; 
+import java.io.*; 
+public class simpleInt{ 
+double amount,term,rate,interest; 
+public simpleInt() 
+          { 
+        Console console = System.console();    
+ System.out.print("Enter Principle => "); 
+ amount=Double.parseDouble(console.readLine()); 
+ System.out.print("Enter Term => "); 
+ term=Double.parseDouble(console.readLine()); 
+ System.out.print("Enter Interest Rate => "); 
+ rate=Double.parseDouble(console.readLine()); 
+           } 
+public void calc() 
+         { 
+         interest=((amount*rate)/100.0)*term; 
+         System.out.println("Interest on deposit => "+interest); 
+         } 
+      }   
+Save the above file in simpleInt.java 
+import pack1.simpleInt; 
+import pack1.centFarh; 
+class UseOfPack{ 
+public static void main(String args[]){ 
+simpleInt i=new simpleInt(); 
+i.calc();    
+centFarh f=new centFarh(); 
+f.calcCF();  
+} 
+} 
+//Save the above file in UseOfPack.java 
